@@ -15,50 +15,47 @@ if operation == "divide" or operation == "subtract":  #branching statemntment be
 # above is not correct, but didn't didn't note error
 # correct version: if operation == "divide" or operation == "subtract": 
 if operation == "add" or operation == "multiply":
-    print("Alert: You chose to {}.".format(operation))
+    print("You chose to {}.".format(operation))
 
+#code here below,  try/except...try part doesn't work. 
 
 #   request user input, convert input to float
 #   input by defalut is <class'string'>, use type converstion to convert input to <class'float'>
-num1 = float(input("Enter first number: "))  # request user to enter a first number, input converted to a float and stored in num1 variable 
-num2 = float(input("Enter second number: "))  # request user to enter a second number, input converted to float and stored in num2 variable 
 
+# num1 = float(input("Enter first number: "))  # request user to enter a first number, input converted to a float and stored in num1 variable 
+# num2 = float(input("Enter second number: "))  # request user to enter a second number, input converted to float and stored in num2 variable 
+# okay, try except makes sense if improper num used, if, elif, else statement, by default don't run
+# is this because num1 and num2 variables were not declared and assigned values within the try/except 
+try:
+# don't forget to indent block, explected indented block, plylance
+# 
+    num1 = float(input("Enter first number: "))  # request user to enter a first number, input converted to a float and stored in num1 variable 
+    num2 = float(input("Enter second number: "))  # request user to enter a second number, input converted to float and stored in num2 variable 
 
 # if condition is True, the assoicated code block runs, if condition is False, program continues without running associated code in code block
 # if statement below is based on the what operation the user choses
 
-if operation == "add":  # use if statement to provide branching logic based on operation chosen/entere by user
-    result = num1 + num2 # add num1 and num2 and store in varaibe 'result'
-    print("{} + {} = {}.".format(num1, num2, result)) #  output a statement that prints result of adding num1 and num2
+    if operation == "add":  # use if statement to provide branching logic based on operation chosen/entere by user
+        result = num1 + num2 # add num1 and num2 and store in varaibe 'result'
+        print("{} + {} = {}.".format(num1, num2, result)) #  output a statement that prints result of adding num1 and num2
 
-elif operation == "subtract": #  if user doesn't enter "add" operation, this block of code runs and is executed if user enters "subtract" operation
-    result = num1 - num2  #  add num1 and num2 and store in varaibe 'result'
-    print("{} - {} = {}.".format(num1, num2, result)) #  output statement that prints the result of subtracing num1 from num2
+    elif operation == "subtract": #  if user doesn't enter "add" operation, this block of code runs and is executed if user enters "subtract" operation
+        result = num1 - num2  #  add num1 and num2 and store in varaibe 'result'
+        print("{} - {} = {}.".format(num1, num2, result)) #  output statement that prints the result of subtracing num1 from num2
 
-elif operation == "multiply":#  if user doesn't enter the "add" or "subtract" , this block of code runs and is executed if user enters "multiply" operation
-    result = num1 * num2  # multiply num1 and num2 and store in variable "result"
-    print("{} * {} = {}.".format(num1, num2, result))   #  output statement that prints the result of subtracing num1 from num2
+    elif operation == "multiply":#  if user doesn't enter the "add" or "subtract" , this block of code runs and is executed if user enters "multiply" operation
+        result = num1 * num2  # multiply num1 and num2 and store in variable "result"
+        print("{} * {} = {}.".format(num1, num2, result))   #  output statement that prints the result of subtracing num1 from num2
 
-elif operation == "divide": # if user doesn't enter the "add", "subtract" or "multiply" operation, this block of code runs and is executed if user enters "divide"
-    result = num1/num2
-    print("{} / {} = {}".format(num1, num2, result))
+    elif operation == "divide": # if user doesn't enter the "add", "subtract" or "multiply" operation, this block of code runs and is executed if user enters "divide"
+        result = num1/num2
+        print("{} / {} = {}".format(num1, num2, result))
 
-else:  # if none of the conditions above have a value true, else statemetn will output
-    print("Sorry, but {} is not an option.".format(operation))#  still working on this
+    else:  # if none of the conditions above have a value true, else statemetn will output
+        print("Sorry, but {} is not an option.".format(operation))#  still working on this
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+except:
+    print("Error Fam")
 
 # testing and notes 
 # testing and accounting for errors
@@ -135,6 +132,7 @@ except:
     #print("all number converted to floats /n For example: 5")
 
 # understand why this error occurrred: 
+
 """
 if operation == "divide" or operation == "subtract":  #branching statemntment begin with if statements. if statement checks if a given statement is True or False
     print("Alert: You chose to {}, please keep in mind the order matters.".format(operation))
